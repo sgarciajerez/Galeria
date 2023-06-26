@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Imagen } from '../imagen.model';
 
 @Component({
   selector: 'app-imagen-completa',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./imagen-completa.component.css']
 })
 export class ImagenCompletaComponent {
-
+  @Input() imagenes:Imagen[];
 }
