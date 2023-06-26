@@ -1,1 +1,4 @@
-<p>{{imagenes}}</p>
+<div *ngIf="imagen.getVolverGrande()==true">
+    <img [src]="imagen.url">
+    <div class="iconoX" (click)="imagen.cambiarTamano()"></div>
+</div>

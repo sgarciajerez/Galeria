@@ -1,11 +1,23 @@
 export class Imagen {
-    id:number=0;
     url:string='';
     volverGrande:boolean=false;
 
-    constructor(id:number, url:string){
-        this.id=id;
+    constructor(url:string){
         this.url=url;
         this.volverGrande=false;
+    }
+
+    cambiarTamano():void{
+        if(!this.volverGrande){
+            this.volverGrande=true;
+        }else{
+            this.volverGrande=false;
+        }
+        console.log(this.volverGrande);
+        
+    }
+
+    getVolverGrande():boolean{
+        return this.volverGrande;
     }
 }

@@ -7,5 +7,5 @@ import { Imagen } from '../imagen.model';
   styleUrls: ['./imagen-completa.component.css']
 })
 export class ImagenCompletaComponent {
-  @Input() imagenes:Imagen[];
+  @Input() imagen:Imagen;
 }
