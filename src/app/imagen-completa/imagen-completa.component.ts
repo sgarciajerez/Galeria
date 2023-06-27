@@ -8,4 +8,13 @@ import { Imagen } from '../imagen.model';
 })
 export class ImagenCompletaComponent {
   @Input() imagen:Imagen;
+  @Input() mostrar:boolean;
+
+  cambiarMostrar():void{
+    if(this.mostrar){
+      this.mostrar=false;
+    }else{
+      this.mostrar=true;
+    }    
+  } 
 }

@@ -1,15 +1,23 @@
-ng-container{
+section{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.imagenNormal{
-    width: 700px;
-    margin: auto;
-    cursor: pointer;
+section img{
+    object-fit: contain;
+    margin: 10px;
+    max-width: 500px;
+    height: 300px;
+    cursor: zoom-in;
+    border-radius: 20px;
+    transition: all 0.3s ease-in;
 }
 
-.imagenGrande{
-    width: 100%;
-    cursor: pointer;
+
+section img:hover{
+    max-width: 501px;
+    opacity: 0.8;
+    box-shadow: 5px 5px 10px black;
 }

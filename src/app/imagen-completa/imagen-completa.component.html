@@ -1,4 +1,4 @@
 <div *ngIf="imagen.getVolverGrande()==true">
-    <img [src]="imagen.url">
+    <img [src]="imagen.url" (click)="imagen.cambiarTamano()" (click)="cambiarMostrar()">
     <div class="iconoX" (click)="imagen.cambiarTamano()"></div>
 </div>

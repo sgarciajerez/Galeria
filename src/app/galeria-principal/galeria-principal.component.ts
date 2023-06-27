@@ -10,20 +10,27 @@ import { Imagen } from '../imagen.model';
 
 export class GaleriaPrincipalComponent {
 
-
+  mostrar:boolean=true;
+  
   imagenes:Imagen[] = [
-    new Imagen('../../assets/imagenes/1.jpg'),
     new Imagen('../../assets/imagenes/2.jpg'),
     new Imagen('../../assets/imagenes/3.jpg'),
     new Imagen('../../assets/imagenes/4.jpg'),
     new Imagen('../../assets/imagenes/5.jpg'),
+    new Imagen('../../assets/imagenes/6.jpg'),
+    new Imagen('../../assets/imagenes/7.jpg'),
+    new Imagen('../../assets/imagenes/8.jpg'),
+    new Imagen('../../assets/imagenes/9.jpg'),
+    new Imagen('../../assets/imagenes/10.jpg'),
+    new Imagen('../../assets/imagenes/11.jpg'),
+    new Imagen('../../assets/imagenes/12.jpg'),
   ];
 
-  changeSize(id:number):void{
-    if(!this.imagenes[id-1].volverGrande){
-      this.imagenes[id-1].volverGrande=true;
+  cambiarMostrar():void{
+    if(this.mostrar){
+      this.mostrar=false;
     }else{
-      this.imagenes[id-1].volverGrande=false;
+      this.mostrar=true;
     }    
   }
 }

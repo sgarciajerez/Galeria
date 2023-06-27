@@ -1,6 +1,8 @@
-<ng-container *ngFor="let imagen of imagenes; let i = index">
-    <div *ngIf="imagen.getVolverGrande()==false">
-        <img [src]="imagen.url" (click)="imagen.cambiarTamano()" [ngClass]="imagen.getVolverGrande() ? 'imagenGrande' : 'imagenNormal'">
-    </div>
-    <app-imagen-completa [imagen]="imagen"></app-imagen-completa>
-</ng-container>
+<section>
+    <ng-container *ngFor="let imagen of imagenes; let i = index">
+        <div *ngIf="mostrar==true">
+            <img [src]="imagen.url" (click)="imagen.cambiarTamano()" (click)="cambiarMostrar()">
+        </div>
+        <app-imagen-completa [imagen]="imagen" [mostrar]="mostrar"></app-imagen-completa>
+    </ng-container>
+</section>
