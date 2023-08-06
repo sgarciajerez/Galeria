@@ -1,7 +1,17 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <img *ngIf="imagen!==undefined" src={{imagen.url}} class="image-fluid">
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-2 col-md-1">
+            <p class="text-center" (click)="previous()">Anterior</p>
+        </div>
+        <div class="col-8 col-md-10">
+            <figure>
+                <img *ngIf="imagen !== undefined" src="{{imagen.url}}" class="img-fluid">
+                <span class="btn" [routerLink]="['/']">X</span>
+            </figure>
+        </div>
+        <div class="col-2 col-md-1">
+            <p class="text-center" (click)="next()">Siguiente</p>
         </div>
     </div>
 </div>
+

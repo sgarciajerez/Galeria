@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Imagen } from '../../models/imagen.model';
-import {ActivatedRoute} from '@angular/router'
+import {ActivatedRoute, Router} from '@angular/router'
 import { ImagenService } from 'src/app/services/imagen.service';
 
 @Component({
@@ -14,7 +14,9 @@ export class ImagenCompletaComponent implements OnInit{
   images:Imagen[]=[]
   imagen:any;
 
-  constructor(private aRoute:ActivatedRoute,
+  constructor(
+    private aRoute:ActivatedRoute,
+    private route:Router,
     private imagesService:ImagenService
     ){
     this.id=this.aRoute.snapshot.paramMap.get('id');
@@ -27,11 +29,30 @@ export class ImagenCompletaComponent implements OnInit{
 
   getImagen(){
     this.imagesService.getImages().subscribe(data=>{
-      this.images=data.images; 
+      this.images=data.images;      
       this.imagen=this.images.find(el => el.id==this.id);      
     }, error=>{
       console.log(error);
     })
+  }
+
+  next(){
+    this.id++; 
+    console.log(this.id);
+    if(this.images.length==this.id){
+      this.id=0;
+    }
+    this.imagen=this.images[this.id];    
+  }
+
+  previous(){
+    console.log(this.id);
+    
+    if(this.id==0){
+      this.id=this.images.length;
+    }
+    this.id--;        
+    this.imagen=this.images[this.id];
   }
 
 
