@@ -1,8 +1,0 @@
-<section>
-    <ng-container *ngFor="let imagen of imagenes; let i = index">
-        <div *ngIf="mostrar==true">
-            <img [src]="imagen.url" (click)="imagen.cambiarTamano()" (click)="cambiarMostrar()">
-        </div>
-        <app-imagen-completa [imagen]="imagen" [mostrar]="mostrar"></app-imagen-completa>
-    </ng-container>
-</section>

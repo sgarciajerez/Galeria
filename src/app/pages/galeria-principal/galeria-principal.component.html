@@ -1,0 +1,7 @@
+<section>
+    <ng-container *ngFor="let imagen of images; let i = index">
+        <div>
+            <img [src]="imagen.url" [routerLink]="['/', imagen.id]">
+        </div>
+    </ng-container>
+</section>
