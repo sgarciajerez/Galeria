@@ -1,23 +1,10 @@
-section{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 section img{
-    object-fit: contain;
-    margin: 10px;
-    max-width: 500px;
-    height: 300px;
     cursor: zoom-in;
     border-radius: 20px;
-    transition: all 0.3s ease-in;
+    transition: all 0.2s ease-in;
 }
 
-
 section img:hover{
-    max-width: 501px;
     opacity: 0.8;
     box-shadow: 5px 5px 10px black;
 }
